@@ -39,7 +39,8 @@ cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel1.jpg'),
-  quantity: 10,
+  #quantity is 0 to see the Sold out Badge I made in HTML.erb
+  quantity: 0,
   price: 64.99
 })
 
