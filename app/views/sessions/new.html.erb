@@ -1,0 +1,25 @@
+<div class="loginForm">
+  <h1>Login</h1>
+<!-- from users_controller, if the notice fire off
+b/c Invalid Id/password from sessions_controller.rb-->
+  <% if notice %>
+    <div class="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+<!--the log-in form, what happened when users trying to log in, data needs to be stored in sessions-->
+  <%= form_tag '/login' do %>
+    <div>
+      <label>Email:</label>
+      <%= text_field_tag :email, "" %>
+    </div>
+
+    <div>
+      <label>Password:</label>
+      <%= password_field_tag :password, "" %>
+    </div>
+    <%= submit_tag 'Submit' %>
+  <% end %>
+
+</div>

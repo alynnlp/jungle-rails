@@ -1,0 +1,36 @@
+<div class='signupForm'>
+  <h1>Sign Up</h1>
+
+  <% if notice %>
+    <div class ='alert'>
+      <!--there is an error.fullmessages from users_controller we need to LOOP-->
+      <% notice.each do |n| %>
+        <p><% n %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form_for :user, url: '/users' do |f| %>
+    <div class='name'>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+
+    <div class='email'>
+      <%= f.label :email %>
+      <%= f.text_field :email%>
+    </div>
+
+    <div class='password'>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class='pwconfirm'>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <%= f.submit "Submit" %>
+  <% end %>
+
+</div>
